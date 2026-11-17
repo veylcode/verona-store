@@ -659,9 +659,12 @@ function initLookbook() {
   let startScroll = 0;
   let velocity = 0;
   let lastX = 0;
+  let glideFrame = 0;
 
   rail.addEventListener("pointerdown", (event) => {
-    if (event.pointerType !== "mouse") return;
+    if (event.pointerType !== "mouse" || event.button !== 0) return;
+    cancelAnimationFrame(glideFrame);
+    velocity = 0;
     isDown = true;
     startX = lastX = event.clientX;
     startScroll = rail.scrollLeft;
@@ -682,9 +685,16 @@ function initLookbook() {
     const glide = () => {
       velocity *= 0.92;
       rail.scrollLeft -= velocity;
-      if (Math.abs(velocity) > 0.5) requestAnimationFrame(glide);
+      if (Math.abs(velocity) > 0.5) glideFrame = requestAnimationFrame(glide);
     };
     glide();
+  });
+
+  addEventListener("pointercancel", () => {
+    isDown = false;
+    velocity = 0;
+    rail.classList.remove("is-dragging");
+    cancelAnimationFrame(glideFrame);
   });
 }
 
