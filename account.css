@@ -1,0 +1,496 @@
+.account-icon__initials {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--bg);
+  font-family: var(--serif);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  transition: background 0.3s;
+}
+
+.account-icon:hover .account-icon__initials {
+  background: var(--accent);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+}
+
+.btn--outline:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.btn.is-loading {
+  color: transparent;
+  position: relative;
+  pointer-events: none;
+}
+
+.btn.is-loading::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(127, 127, 127, 0.35);
+  border-top-color: currentColor;
+  color: var(--bg);
+  animation: vSpin 0.7s linear infinite;
+}
+
+.btn--outline.is-loading::after {
+  color: var(--ink);
+}
+
+@keyframes vSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.account {
+  width: min(480px, 100%);
+}
+
+.account__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 28px 28px 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.account__notice {
+  margin-bottom: 20px;
+  padding: 14px 16px;
+  background: var(--ink);
+  color: var(--bg);
+  font-size: 13px;
+  animation: vIn 0.6s var(--ease);
+}
+
+.account__tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 28px;
+  border: 1px solid var(--ink);
+}
+
+.account__tabs button {
+  padding: 13px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: background 0.4s var(--ease), color 0.4s var(--ease);
+}
+
+.account__tabs button.is-active {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+[data-view="reset"] .account__tabs {
+  display: none;
+}
+
+.v-form {
+  display: grid;
+  gap: 22px;
+  animation: vIn 0.6s var(--ease);
+}
+
+@keyframes vIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+}
+
+.v-form__lead {
+  font-family: var(--serif);
+  font-size: 19px;
+  line-height: 1.4;
+}
+
+.v-field {
+  position: relative;
+  display: grid;
+  gap: 6px;
+}
+
+.v-field > span {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.v-field input {
+  width: 100%;
+  padding: 10px 70px 10px 0;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.4s;
+}
+
+.v-field input:focus {
+  border-color: var(--ink);
+}
+
+.v-field input[readonly] {
+  color: var(--muted);
+}
+
+.v-field.is-invalid input {
+  border-color: var(--accent);
+}
+
+.v-field small,
+.v-check small {
+  font-size: 12px;
+  color: var(--accent);
+}
+
+.v-field small:empty,
+.v-check small:empty {
+  display: none;
+}
+
+.v-field__toggle {
+  position: absolute;
+  right: 0;
+  top: 28px;
+  font-size: 0;
+}
+
+.v-field__toggle::after {
+  content: "Показать";
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border-bottom: 1px solid currentColor;
+}
+
+.v-field__toggle.is-visible::after {
+  content: "Скрыть";
+}
+
+.v-form__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.v-check {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.v-check input {
+  position: absolute;
+  opacity: 0;
+}
+
+.v-check i {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  border: 1px solid var(--ink);
+  position: relative;
+}
+
+.v-check i::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  background: var(--ink);
+  transform: scale(0);
+  transition: transform 0.3s var(--ease);
+}
+
+.v-check input:checked + i::after {
+  transform: scale(1);
+}
+
+.v-check input:focus-visible + i {
+  outline: 1px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.v-check small {
+  flex-basis: 100%;
+}
+
+.v-link {
+  justify-self: start;
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  color: var(--muted);
+}
+
+.v-link:hover {
+  color: var(--ink);
+}
+
+.v-strength {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) auto;
+  gap: 4px;
+  align-items: center;
+  margin-top: -12px;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.v-strength i {
+  height: 2px;
+  background: var(--line);
+  transition: background 0.4s;
+}
+
+.v-strength span {
+  min-width: 90px;
+  text-align: right;
+}
+
+.v-strength[data-score="0"] i:nth-child(-n + 1),
+.v-strength[data-score="1"] i:nth-child(-n + 1) {
+  background: var(--accent);
+}
+
+.v-strength[data-score="2"] i:nth-child(-n + 2) {
+  background: #b88a57;
+}
+
+.v-strength[data-score="3"] i:nth-child(-n + 3),
+.v-strength[data-score="4"] i:nth-child(-n + 4) {
+  background: var(--ink);
+}
+
+.v-form__error,
+.v-form__success {
+  padding: 12px 14px;
+  font-size: 13px;
+  border: 1px solid;
+}
+
+.v-form__error {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.v-form__success {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.account__demo-note {
+  margin-top: auto;
+  padding-top: 28px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.account__hello {
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+  animation: vIn 0.6s var(--ease);
+}
+
+.account__hello p {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.account__hello h4 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1.1;
+  margin: 6px 0;
+}
+
+.account__hello small {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.account__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom: 1px solid var(--line);
+}
+
+.account__stats button {
+  display: grid;
+  justify-items: start;
+  gap: 2px;
+  padding: 18px 0;
+  text-align: left;
+  transition: color 0.3s;
+}
+
+.account__stats button + button {
+  padding-left: 16px;
+  border-left: 1px solid var(--line);
+}
+
+.account__stats b {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.account__stats span {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.account__stats button:hover b {
+  color: var(--accent);
+}
+
+.account__section {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.account__section h5 {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.orders {
+  display: grid;
+  gap: 12px;
+}
+
+.order {
+  padding: 16px;
+  border: 1px solid var(--line);
+  animation: vIn 0.5s var(--ease) both;
+}
+
+.order__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.order__top b {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.order__status {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.order__status--done {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--line);
+}
+
+.order p {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.order__total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+  font-size: 14px;
+}
+
+.orders__empty {
+  font-family: var(--serif);
+  font-size: 18px;
+  color: var(--muted);
+}
+
+.account__details {
+  border-bottom: 1px solid var(--line);
+}
+
+.account__details summary {
+  padding: 16px 0;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.account__details summary::-webkit-details-marker {
+  display: none;
+}
+
+.account__details summary::after {
+  content: "+";
+  font-size: 16px;
+  transition: transform 0.4s var(--ease);
+}
+
+.account__details[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.account__details .v-form {
+  padding-bottom: 24px;
+}
+
+.account__details .btn {
+  justify-self: start;
+}
+
+.account__logout {
+  margin-top: 28px;
+  align-self: flex-start;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 1px solid currentColor;
+}

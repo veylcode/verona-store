@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VÉRONA — одежда и аксессуары</title>
+  <meta name="description" content="VÉRONA — интернет-магазин одежды и аксессуаров. Коллекция осень–зима 2026.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="account.css">
+</head>
+<body>
+  <div class="announce">
+    <div class="announce__track">
+      <span>Бесплатная доставка от 15 000 ₽</span>
+      <span>Примерка перед покупкой</span>
+      <span>Возврат в течение 30 дней</span>
+      <span>Новая коллекция AW26</span>
+      <span>Бесплатная доставка от 15 000 ₽</span>
+      <span>Примерка перед покупкой</span>
+      <span>Возврат в течение 30 дней</span>
+      <span>Новая коллекция AW26</span>
+    </div>
+  </div>
+
+  <header class="header" id="header">
+    <nav class="header__nav">
+      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Меню">
+        <svg viewBox="0 0 24 24"><path d="M3 8h18M3 16h18"/></svg>
+      </button>
+      <div class="header__links" id="headerLinks">
+        <a href="#shop" data-filter-link="women">Женщинам</a>
+        <a href="#shop" data-filter-link="men">Мужчинам</a>
+        <a href="#shop" data-filter-link="accessories">Аксессуары</a>
+        <a href="#lookbook">Lookbook</a>
+      </div>
+    </nav>
+    <a href="#top" class="logo">VÉRONA</a>
+    <div class="header__actions">
+      <button class="icon-btn" id="searchOpen" aria-label="Поиск">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+      </button>
+      <button class="icon-btn" id="wishlistOpen" aria-label="Избранное">
+        <svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg>
+        <span class="badge" id="wishCount">0</span>
+      </button>
+      <button class="icon-btn account-icon" id="accountOpen" aria-label="Личный кабинет">
+        <svg viewBox="0 0 24 24" data-when="out"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+        <span class="account-icon__initials" data-when="in" data-auth-initials></span>
+      </button>
+      <button class="icon-btn" id="cartOpen" aria-label="Корзина">
+        <svg viewBox="0 0 24 24"><path d="M5 8h14l-1.2 12H6.2L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span class="badge" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="hero__cols">
+        <figure class="hero__col" data-speed="0.08">
+          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80" alt="Модель в пальто">
+        </figure>
+        <figure class="hero__col hero__col--center" data-speed="-0.06">
+          <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=900&q=80" alt="Модель в образе коллекции">
+        </figure>
+        <figure class="hero__col" data-speed="0.12">
+          <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=900&q=80" alt="Модель в платье">
+        </figure>
+      </div>
+      <h1 class="hero__word" aria-label="VÉRONA">
+        <span>V</span><span>É</span><span>R</span><span>O</span><span>N</span><span>A</span>
+      </h1>
+      <div class="hero__bottom">
+        <p>Осень — Зима 2026<br><em>Тишина формы</em></p>
+        <a href="#shop" class="btn">Смотреть коллекцию</a>
+      </div>
+    </section>
+
+    <section class="categories">
+      <a href="#shop" class="category reveal" data-filter-link="women">
+        <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=80" alt="" loading="lazy">
+        <span class="category__label"><small>1</small>Женщинам</span>
+      </a>
+      <a href="#shop" class="category reveal" data-filter-link="men">
+        <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=900&q=80" alt="" loading="lazy">
+        <span class="category__label"><small>2</small>Мужчинам</span>
+      </a>
+      <a href="#shop" class="category reveal" data-filter-link="accessories">
+        <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=900&q=80" alt="" loading="lazy">
+        <span class="category__label"><small>3</small>Аксессуары</span>
+      </a>
+    </section>
+
+    <section class="shop" id="shop">
+      <div class="shop__head">
+        <h2 class="heading reveal">Каталог <em>AW26</em></h2>
+        <div class="shop__toolbar">
+          <span class="shop__count" id="productCount"></span>
+          <button class="filter-toggle" id="filterToggle">Фильтры</button>
+          <select class="select" id="sortSelect" aria-label="Сортировка">
+            <option value="new">Новинки</option>
+            <option value="price-asc">Цена ↑</option>
+            <option value="price-desc">Цена ↓</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="shop__body">
+        <aside class="filters" id="filters">
+          <div class="filters__group">
+            <h3>Категория</h3>
+            <div class="filters__options" id="categoryFilter">
+              <button class="is-active" data-category="all">Все</button>
+              <button data-category="women">Женщинам</button>
+              <button data-category="men">Мужчинам</button>
+              <button data-category="accessories">Аксессуары</button>
+            </div>
+          </div>
+          <div class="filters__group">
+            <h3>Размер</h3>
+            <div class="sizes" id="sizeFilter">
+              <button data-size="XS">XS</button>
+              <button data-size="S">S</button>
+              <button data-size="M">M</button>
+              <button data-size="L">L</button>
+              <button data-size="XL">XL</button>
+            </div>
+          </div>
+          <div class="filters__group">
+            <h3>Цена до <output id="priceOut"></output></h3>
+            <input type="range" class="range" id="priceRange" min="3000" max="60000" step="1000" value="60000">
+          </div>
+          <button class="filters__reset" id="filtersReset">Сбросить всё</button>
+        </aside>
+
+        <div class="products" id="products"></div>
+      </div>
+    </section>
+
+    <section class="manifesto">
+      <p class="manifesto__text" id="manifesto">Мы шьём вещи, которые не кричат. Они говорят тихо — фактурой шерсти, точностью линии, весом ткани в руке. Одежда, которая остаётся с вами дольше одного сезона.</p>
+    </section>
+
+    <section class="lookbook" id="lookbook">
+      <div class="lookbook__head">
+        <h2 class="heading reveal">Lookbook</h2>
+        <p class="reveal">Потяните, чтобы листать →</p>
+      </div>
+      <div class="lookbook__rail" id="lookbookRail">
+        <figure class="look">
+          <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80" alt="" draggable="false" loading="lazy">
+          <figcaption><span>Look 1</span>Пальто «Небо», брюки «Ось»</figcaption>
+        </figure>
+        <figure class="look look--tall">
+          <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=80" alt="" draggable="false" loading="lazy">
+          <figcaption><span>Look 2</span>Капсула «Мастерская»</figcaption>
+        </figure>
+        <figure class="look">
+          <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=900&q=80" alt="" draggable="false" loading="lazy">
+          <figcaption><span>Look 3</span>Костюм «Графит»</figcaption>
+        </figure>
+        <figure class="look look--tall">
+          <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80" alt="" draggable="false" loading="lazy">
+          <figcaption><span>Look 4</span>Выходной в городе</figcaption>
+        </figure>
+        <figure class="look">
+          <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=900&q=80" alt="" draggable="false" loading="lazy">
+          <figcaption><span>Look 5</span>Куртка «Север»</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <h2 class="heading reveal">Письма без <em>спама</em></h2>
+      <p class="reveal">Раз в месяц: новые коллекции, закрытые предпродажи и истории из мастерской.</p>
+      <form class="newsletter__form reveal" id="newsletterForm" novalidate>
+        <input type="email" name="email" placeholder="Ваш e-mail" required>
+        <button type="submit">Подписаться</button>
+      </form>
+      <p class="newsletter__msg" id="newsletterMsg"></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__cols">
+      <div>
+        <h4>Покупателям</h4>
+        <a href="#shop">Доставка и оплата</a>
+        <a href="#shop">Возврат</a>
+        <a href="#shop">Таблица размеров</a>
+      </div>
+      <div>
+        <h4>VÉRONA</h4>
+        <a href="#lookbook">О бренде</a>
+        <a href="#lookbook">Мастерская</a>
+        <a href="#lookbook">Бутики</a>
+      </div>
+      <div>
+        <h4>Соцсети</h4>
+        <a href="#top">Instagram</a>
+        <a href="#top">Telegram</a>
+        <a href="#top">Pinterest</a>
+      </div>
+    </div>
+    <div class="footer__logo">VÉRONA</div>
+    <p class="footer__note">© 2026 VÉRONA. Концепт интернет-магазина для портфолио — оплата и доставка демонстрационные.</p>
+  </footer>
+
+  <div class="overlay" id="overlay"></div>
+
+  <aside class="drawer" id="cartDrawer" aria-label="Корзина">
+    <div class="drawer__head">
+      <h3>Корзина <sup id="cartHeadCount">0</sup></h3>
+      <button class="icon-btn" data-close aria-label="Закрыть"><svg viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+    </div>
+    <div class="shipping">
+      <p id="shippingText"></p>
+      <div class="shipping__bar"><span id="shippingBar"></span></div>
+    </div>
+    <ul class="cart-list" id="cartList"></ul>
+    <div class="drawer__foot">
+      <div class="drawer__total"><span>Итого</span><b id="cartTotal">0 ₽</b></div>
+      <button class="btn btn--full" id="checkoutBtn">Оформить заказ</button>
+    </div>
+  </aside>
+
+  <aside class="drawer" id="wishDrawer" aria-label="Избранное">
+    <div class="drawer__head">
+      <h3>Избранное</h3>
+      <button class="icon-btn" data-close aria-label="Закрыть"><svg viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+    </div>
+    <ul class="cart-list" id="wishList"></ul>
+  </aside>
+
+  <div class="search-panel" id="searchPanel">
+    <div class="search-panel__inner">
+      <input type="search" id="searchInput" placeholder="Что вы ищете?" autocomplete="off">
+      <button class="icon-btn" data-close aria-label="Закрыть"><svg viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+
+  <div class="quickview" id="quickview" role="dialog" aria-modal="true">
+    <div class="quickview__panel">
+      <button class="icon-btn quickview__close" data-close aria-label="Закрыть"><svg viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+      <div class="quickview__media" id="qvMedia"></div>
+      <div class="quickview__info">
+        <p class="quickview__cat" id="qvCategory"></p>
+        <h3 class="quickview__title" id="qvTitle"></h3>
+        <p class="quickview__price" id="qvPrice"></p>
+        <p class="quickview__desc" id="qvDesc"></p>
+        <div class="quickview__group">
+          <span>Цвет: <b id="qvColorName"></b></span>
+          <div class="colors" id="qvColors"></div>
+        </div>
+        <div class="quickview__group">
+          <span>Размер</span>
+          <div class="sizes" id="qvSizes"></div>
+        </div>
+        <p class="quickview__error" id="qvError"></p>
+        <button class="btn btn--full" id="qvAdd">Добавить в корзину</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <aside class="drawer account" id="accountDrawer" aria-label="Личный кабинет">
+    <div class="drawer__head">
+      <h3 data-when="out">Аккаунт</h3>
+      <h3 data-when="in">Личный кабинет</h3>
+      <button class="icon-btn" data-close aria-label="Закрыть"><svg viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+    </div>
+
+    <div class="account__body" data-when="out">
+      <p class="account__notice" id="accountNotice" hidden></p>
+      <div class="account__auth" data-auth-root data-view="login">
+        <div class="account__tabs">
+          <button data-auth-switch="login">Вход</button>
+          <button data-auth-switch="register">Регистрация</button>
+        </div>
+
+        <form class="v-form" data-auth-form="login" data-pane="login">
+          <p class="v-form__lead">Войдите, чтобы видеть заказы, сохранять избранное и оформлять покупки быстрее.</p>
+          <label class="v-field" data-field>
+            <span>E-mail</span>
+            <input type="email" name="email" autocomplete="email">
+            <small data-field-error></small>
+          </label>
+          <label class="v-field" data-field>
+            <span>Пароль</span>
+            <input type="password" name="password" autocomplete="current-password">
+            <button class="v-field__toggle" data-toggle-password aria-label="Показать пароль">Показать</button>
+            <small data-field-error></small>
+          </label>
+          <div class="v-form__row">
+            <label class="v-check"><input type="checkbox" name="remember" checked><i></i>Запомнить</label>
+            <button class="v-link" data-auth-switch="reset">Забыли пароль?</button>
+          </div>
+          <p class="v-form__error" data-form-error hidden></p>
+          <button class="btn btn--full" type="submit">Войти</button>
+          <button class="btn btn--outline btn--full" data-auth-demo>Демо-вход</button>
+        </form>
+
+        <form class="v-form" data-auth-form="register" data-pane="register" hidden>
+          <p class="v-form__lead">Создайте аккаунт — первым узнавайте о новых коллекциях и закрытых распродажах.</p>
+          <label class="v-field" data-field>
+            <span>Имя</span>
+            <input type="text" name="name" autocomplete="name">
+            <small data-field-error></small>
+          </label>
+          <label class="v-field" data-field>
+            <span>E-mail</span>
+            <input type="email" name="email" autocomplete="email">
+            <small data-field-error></small>
+          </label>
+          <label class="v-field" data-field>
+            <span>Пароль</span>
+            <input type="password" name="password" autocomplete="new-password">
+            <button class="v-field__toggle" data-toggle-password aria-label="Показать пароль">Показать</button>
+            <small data-field-error></small>
+          </label>
+          <div class="v-strength" data-strength><i></i><i></i><i></i><i></i><span data-strength-label></span></div>
+          <label class="v-field" data-field>
+            <span>Повторите пароль</span>
+            <input type="password" name="confirm" autocomplete="new-password">
+            <small data-field-error></small>
+          </label>
+          <label class="v-check" data-field>
+            <input type="checkbox" name="agree"><i></i>Принимаю условия и политику конфиденциальности
+            <small data-field-error></small>
+          </label>
+          <p class="v-form__error" data-form-error hidden></p>
+          <button class="btn btn--full" type="submit">Создать аккаунт</button>
+        </form>
+
+        <form class="v-form" data-auth-form="reset" data-pane="reset" hidden>
+          <p class="v-form__lead">Введите e-mail — мы отправим ссылку для восстановления пароля.</p>
+          <label class="v-field" data-field>
+            <span>E-mail</span>
+            <input type="email" name="email" autocomplete="email">
+            <small data-field-error></small>
+          </label>
+          <p class="v-form__success" data-form-success hidden></p>
+          <button class="btn btn--full" type="submit">Отправить</button>
+          <button class="v-link" data-auth-switch="login">← Ко входу</button>
+        </form>
+      </div>
+      <p class="account__demo-note">Демо-режим: аккаунт хранится только в этом браузере.</p>
+    </div>
+
+    <div class="account__body" data-when="in">
+      <div class="account__hello">
+        <p>Здравствуйте,</p>
+        <h4 data-auth-name></h4>
+        <small>С нами с <span data-auth-since></span></small>
+      </div>
+
+      <div class="account__stats">
+        <button data-account-section="orders"><b id="accOrders">0</b><span>Заказы</span></button>
+        <button id="accWishBtn"><b id="accWish">0</b><span>Избранное</span></button>
+        <button data-account-section="settings"><b>→</b><span>Настройки</span></button>
+      </div>
+
+      <section class="account__section" id="ordersSection">
+        <h5>История заказов</h5>
+        <ul class="orders" id="ordersList"></ul>
+      </section>
+
+      <section class="account__section" id="settingsSection">
+        <details class="account__details" open>
+          <summary>Личные данные</summary>
+          <form class="v-form" data-auth-form="profile">
+            <label class="v-field" data-field>
+              <span>Имя</span>
+              <input type="text" name="name">
+              <small data-field-error></small>
+            </label>
+            <label class="v-field" data-field>
+              <span>E-mail</span>
+              <input type="email" name="email" readonly>
+            </label>
+            <label class="v-field" data-field>
+              <span>Телефон для доставки</span>
+              <input type="tel" name="phone">
+              <small data-field-error></small>
+            </label>
+            <p class="v-form__success" data-form-success hidden></p>
+            <button class="btn btn--outline" type="submit">Сохранить</button>
+          </form>
+        </details>
+        <details class="account__details">
+          <summary>Смена пароля</summary>
+          <form class="v-form" data-auth-form="password">
+            <label class="v-field" data-field>
+              <span>Текущий пароль</span>
+              <input type="password" name="current" autocomplete="current-password">
+              <small data-field-error></small>
+            </label>
+            <label class="v-field" data-field>
+              <span>Новый пароль</span>
+              <input type="password" name="password" autocomplete="new-password">
+              <button class="v-field__toggle" data-toggle-password aria-label="Показать пароль">Показать</button>
+              <small data-field-error></small>
+            </label>
+            <div class="v-strength" data-strength><i></i><i></i><i></i><i></i><span data-strength-label></span></div>
+            <label class="v-field" data-field>
+              <span>Повторите пароль</span>
+              <input type="password" name="confirm" autocomplete="new-password">
+              <small data-field-error></small>
+            </label>
+            <p class="v-form__error" data-form-error hidden></p>
+            <p class="v-form__success" data-form-success hidden></p>
+            <button class="btn btn--outline" type="submit">Обновить пароль</button>
+          </form>
+        </details>
+      </section>
+
+      <button class="account__logout" data-auth-logout>Выйти</button>
+    </div>
+  </aside>
+
+  <script src="auth.js"></script>
+  <script src="script.js"></script>
+  <script src="account.js"></script>
+</body>
+</html>
